@@ -26,4 +26,19 @@ public class ContactTest {
     assertEquals("Barry", myContact.getLastName());
   }
 
+  @Test
+  public void Contact_returnsBirthMonth_June() {
+    Contact myContact = new Contact("Mary", "Barry", "June", "Boar");
+    assertEquals("June", myContact.getBirthMonth());
+  }
+
+  @Test
+  public void Contact_returnsZodiacSign_Boar() {
+    Contact myContact = new Contact("Mary", "Barry", "June", "Boar");
+    assertEquals("Boar", myContact.getZodiacSign());
+  }
+
+  
+
+
 }
