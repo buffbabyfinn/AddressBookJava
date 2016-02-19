@@ -38,7 +38,24 @@ public class ContactTest {
     assertEquals("Boar", myContact.getZodiacSign());
   }
 
-  
+  @Test
+  public void Contact_returnsContactId_1() {
+    Contact myContact = new Contact("Mary", "Barry", "June", "Boar");
+    assertEquals(Contact.all().size(), myContact.getId());
+  }
+
+  @Test
+  public void Contact_correctlyIdentifiesAllContacts() {
+    Contact firstContact = new Contact("Mary", "Barry", "June", "Boar");
+    Contact secondContact = new Contact("Steve", "Hunter", "February", "Goat");
+    assertEquals(Contact.find(secondContact.getId()), secondContact);
+  }
+
+  @Test
+  public void find_returnsNullWhenNoTaskFound_null() {
+    assertTrue(Contact.find(999) == null);
+  }
+
 
 
 }

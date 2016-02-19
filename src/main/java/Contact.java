@@ -3,6 +3,8 @@ import java.time.LocalDateTime;
 
 public class Contact {
   private static ArrayList<Contact> instances = new ArrayList<Contact>();
+  private static ArrayList<Phone> mPhone;
+  private static ArrayList<Email> mEmail;
 
   private String mFirstName;
   private String mLastName;
@@ -17,6 +19,8 @@ public class Contact {
     mZodiacSign = zodiacSign;
     instances.add(this);
     mId = instances.size();
+    mPhone = new ArrayList<Phone>();
+    mEmail = new ArrayList<Email>();
   }
 
   public String getFirstName(){
@@ -37,6 +41,22 @@ public class Contact {
 
   public int getId() {
     return mId;
+  }
+
+  public void addPhone(Phone phone) {
+    mPhone.add(phone);
+  }
+
+  public ArrayList<Phone> getPhone() {
+    return mPhone;
+  }
+
+  public void addEmail(Email email) {
+    mEmail.add(email);
+  }
+
+  public ArrayList<Phone> getEmail() {
+    return mEmail;
   }
 
   public static ArrayList<Contact> all() {

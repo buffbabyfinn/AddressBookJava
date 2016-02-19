@@ -1,30 +1,25 @@
 import java.util.ArrayList;
 
-public class Phone {
-  private static ArrayList<Phone> instances = new ArrayList<Phone>();
+public class Email {
+  private static ArrayList<Email> instances = new ArrayList<Email>();
   // private static ArrayList<Contact> mContacts;
 
-  private String mAreaCode;
-  private String mPhoneNumber;
+  private String mAddress;
   private String mType;
   private int mId;
 
-  public Phone(String areaCode, String phoneNumber, String type) {
-    mAreaCode = areaCode;
-    mPhoneNumber = phoneNumber;
+  public Phone(String address, String type) {
+    mAddress = areaCode;
     mType = type;
     instances.add(this);
     mId = instances.size();
-    // mContacts = new ArrayList<Contact>();
+    mContacts = new ArrayList<Contact>();
   }
 
-  public String getAreaCode() {
-    return mAreaCode;
+  public String getAddress() {
+    return mAddress;
   }
 
-  public String getPhoneNumber() {
-    return mPhoneNumber;
-  }
   public int getId() {
     return mId;
   }
@@ -32,16 +27,16 @@ public class Phone {
   public String getType() {
     return mType;
   }
-
+  // 
   // public ArrayList<Contact> getContacts() {
   //   return mContacts;
   // }
   //
-  // public void addPhone(Contact contact) {
+  // public void addTask(Contact contact) {
   //   mContacts.add(contact);
   // }
 
-  public static ArrayList<Phone> all() {
+  public static ArrayList<Email> all() {
     return instances;
   }
 
